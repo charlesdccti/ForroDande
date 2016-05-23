@@ -34,6 +34,7 @@ import android.widget.Toast;
 import com.example.charles.myappmaps.Controle.Controle;
 import com.example.charles.myappmaps.model.Usuario;
 import com.example.charles.myappmaps.services.DB;
+import com.example.charles.myappmaps.util.Mensagens;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -198,8 +199,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         }else {
 
+            showProgress(true);
+            Mensagens.MensagemTa("Login nao encontrado",this);
 
-           // focusView.requestFocus();
+            focusView.requestFocus();
+
         }
 
 
@@ -232,7 +236,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             cancel = true;
         }*/
 
-        if (cancel) {
+    /*    if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.
             focusView.requestFocus();
@@ -240,16 +244,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute((Void) null);
+            //mAuthTask = new UserLoginTask(email, password);
+            //mAuthTask.execute((Void) null);
 
-/*            if("Charles".equals(email) && "ufba".equals(password)){
+*//*            if("Charles".equals(email) && "ufba".equals(password)){
                 //Navega  para proxima tela
                 Intent intent = new Intent(getApplicationContext(), MapsActivity.class );
                 startActivity(intent);
-            }*/
+            }*//*
 
-        }
+        }*/
     }
 
     private boolean isEmailValid(String email) {
