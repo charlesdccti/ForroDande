@@ -55,6 +55,7 @@ public class Academia implements Serializable {
         this.usuario = usuario;
     }
 
+
     public String toString(){
 
         return this.getNome();
